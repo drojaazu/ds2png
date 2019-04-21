@@ -18,3 +18,7 @@ When set, will make all pixels with tile entry 0 transparent.
 
 ### Usage Example
     cat BAT.DS | ./ds2png -t
+
+## Notes
+This is based on the reverse engineering work done by Rich Whitehouse. 
+http://richwhitehouse.com/pubdata/dig3_spec.txt
