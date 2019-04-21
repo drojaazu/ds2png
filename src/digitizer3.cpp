@@ -125,6 +125,7 @@ const ds_img get_img(istream *indata) {
   const ds_img _out = {
       .header = header, .palette = palette, .bmp_data = bmp_data};
 
+  delete[] bmp_data;
   return _out;
 }
 

@@ -19,6 +19,9 @@ bool trns = false;
 
 int main(int argc, char **argv) {
   process_args(argc, argv);
+
+  auto infofile = new ofstream("ds3_info.txt");
+
   try {
     if (infile == nullptr) {
       infile = &cin;
@@ -30,8 +33,6 @@ int main(int argc, char **argv) {
     }
 
     auto workfile = get_ds_file(infile);
-
-    auto infofile = new ofstream("ds3_info.txt");
 
     *infofile << showbase << internal << setfill('0');
 
@@ -89,10 +90,12 @@ int main(int argc, char **argv) {
   } catch (const exception &e) {
     cerr << "Fatal error: " << e.what() << endl;
     if (infile != &cin) delete infile;
+    delete infofile;
     return -1;
   }
 
   if (infile != &cin) delete infile;
+  delete infofile;
   return 0;
 }
 
